@@ -1,0 +1,7 @@
+\begin{figure*}[hbt]
+\ifnextchar[{\eatarg}{}
+
+\centering
+\includegraphics{figures/scs_subscales_lpa.pdf}
+\caption{\label{fig:unnamed-chunk-1}My caption.}
+\end{figure*}
