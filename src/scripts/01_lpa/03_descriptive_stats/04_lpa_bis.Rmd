@@ -156,6 +156,21 @@ sum(is.na(all_items$commeetee))
 ```
 
 
+```{r}
+# rio::export(
+#   all_items,
+#   here::here("data", "final", "rescue_workers_data.csv")
+# )
+
+# Read processed data
+all_items <- rio::import(
+  here::here("data", "final", "rescue_workers_data.csv")
+)
+```
+
+
+
+
 ## IES-R as a function of group
 
 iesr_ts | trunc(lb = 0) ~ is_rescue_worker + (1 | commeetee),
@@ -345,7 +360,7 @@ head(lpa_rw_df)
 ```{r}
 lpa_rw_df %>% 
   scale() %>%
-  estimate_profiles(1:6,
+  estimate_profiles(1:10,
     variances = c("equal", "varying"),
     covariances = c("zero", "varying")
     #package = "MplusAutomation"
